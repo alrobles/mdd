@@ -9,7 +9,7 @@
 #'
 #'
 #' @examples
-#' get_mdd_afrosoricida()
+#' get_mdd_chiroptera()
 get_mdd_chiroptera <- function(dir = NULL){
   root <- system.file(package = "mdd")
   filePath <- paste0(root, "/", "data/MDD_Chiroptera.rds")

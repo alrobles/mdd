@@ -9,8 +9,8 @@
 #'
 #'
 #' @examples
-#' get_mdd_afrosoricida()
-get_mdd_Rodentia <- function(dir = NULL){
+#' get_mdd_rodentia()
+get_mdd_rodentia <- function(dir = NULL){
   root <- system.file(package = "mdd")
   filePath <- paste0(root, "/", "data/MDD_Rodentia.rds")
 

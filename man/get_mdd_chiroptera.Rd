@@ -21,5 +21,5 @@ A SpatVector object with mammal shapefiles
 Function to return mammal shapefiles of afrosoricida Order
 }
 \examples{
-get_mdd_afrosoricida()
+get_mdd_chiroptera()
 }
