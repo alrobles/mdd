@@ -1,0 +1,20 @@
+Package: mdd
+Type: Package
+Title: Download mammal shapefiles of the world
+Version: 0.1.0
+Author: Angel Luis Robles Fernandez
+Maintainer: Angel Luis Robles Fernandez <a.l.robles.fernandez@gmail.com>
+Description: This packages connects to a binary backup of
+    Mammal Diversity Database (MDD) from AMS
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+Imports: 
+    httr,
+    readr,
+    stringr,
+    terra,
+    utils
+Depends: 
+    R (>= 2.10)

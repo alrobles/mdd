@@ -1,0 +1,4 @@
+library(tidyverse)
+library(sf)
+mdd::get_mdd_chiroptera() %>% sf::st_as_sf() %>% 
+  sample(2) %>% plot()

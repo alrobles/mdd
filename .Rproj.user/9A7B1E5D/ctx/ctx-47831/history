@@ -1,0 +1,204 @@
+usethis::use_mit_license()
+usethis::use_gpl3_license()
+readRDS("inst/mammal_mexico.rda")
+readRDS("inst/mammal_mexico.rda")
+readRDS("inst/mammal_mexico_test.rda")
+readRDS("inst/mammal_mexico_test.rds")
+readRDS("inst/mammal_mexico_test.rds")
+readRDS("inst/mammal_mexico_test.rds")
+readRDS("inst/mammal.rds")
+readRDS("inst/mammal_mexico.rds")
+mammal_mexico <- readRDS("inst/mammal_mexico.rds")
+terra::vect(mammal_mexico)
+usethis::use_r("load_mammal_shape")
+system.file("extdata", package="ecoDistance1")
+system.file("extdata", package="ecoDistance1")
+system.file("extdata","mammal_mexico.rds")
+system.file("extdata")
+system.file("extdata")
+system.file("inst/extdata", package="ecoDistance1")
+system.file
+?system.file
+system.file(package="ecoDistance1")
+system.file("extdata")
+system.file("mammal_shape.shp")
+system.file("mammal_shape.shp")
+system.file
+?system.file
+library(ecoDistance1)
+system.file(package="ecoDistance1")
+system.file("extdata", package="ecoDistance1")
+system.file("inst/extdata", package="ecoDistance1")
+system.file("inst", package="ecoDistance1")
+system.file("extdata", package="ecoDistance1")
+system.file("extdata/mammal_mexico.rds", package="ecoDistance1")
+system.file("extdata/mammal_mexico.rds", package="ecoDistance1")
+path <- system.file("extdata/mammal_mexico.rds", package="ecoDistance1")
+readRDS(path)
+readRDS
+terra::unwrap(readRDS(path) )
+shp <- terra::unwrap(readRDS(path) )
+get_mammal_shp <- function(){
+path <- system.file("extdata/mammal_mexico.rds", package="ecoDistance1")
+shp <- terra::unwrap(readRDS(path) )
+return(shp)
+}
+get_mammal_shp()
+get_mammal_shp() %>% class()
+class((get_mammal_shp())
+)
+devtools::document()
+devtools::document()
+devtools::check(cran = TRUE)
+usethis::use_package("terra")
+usethis::use_package("terra")
+devtools::check(cran = TRUE)
+devtools::check(cran = TRUE)
+path
+url <- "https://mdd-aligned-shp-0-1-0.nyc3.cdn.digitaloceanspaces.com/mammal_mexico.rds"
+path
+file.exists(path)
+!file.exists(path)
+path
+if(!file.exists(path)){
+download.file(path)
+}
+download.file(url, destfile = path)
+if(!file.exists(path)){
+download.file(url, destfile = path)
+}
+#' Function to return mammal shapefiles from MDD
+#'
+#' @return A SpatVector object with mammal shapefiles
+#' @export
+#'
+#' @examples
+#' get_mammal_shp()
+get_mammal_shp <- function(){
+url <- "https://mdd-aligned-shp-0-1-0.nyc3.cdn.digitaloceanspaces.com/mammal_mexico.rds"
+path <- system.file("extdata/mammal_mexico.rds", package="ecoDistance1")
+if(!file.exists(path)){
+download.file(url, destfile = path)
+}
+shp <- terra::unwrap(readRDS(path) )
+return(shp)
+}
+get_mammal_shp()
+devtools::document()
+rm(list = c("get_mammal_shp"))
+utils::download.file
+usethis::use_package("utils")
+readRDS
+system.file
+usethis::use_package("pkgload")
+devtools::document()
+devtools::document()
+pkgload::system.file
+system.file
+system.file
+base::system.file
+devtools::document()
+devtools::document()
+devtools::check()
+download.file
+utils::download.file()
+utils::download.file
+devtools::document()
+devtools::document()
+url <- "https://mdd-aligned-shp-0-1-0.nyc3.cdn.digitaloceanspaces.com/mammal_mexico.rds"
+path <- base::system.file("extdata/mammal_mexico.rds", package="ecoDistance1")
+path
+base::system.file
+base::system.file()
+base::system.file(package="ecoDistance1")
+root <- base::system.file(package="ecoDistance1")
+paste0(root, "/extdata/mammal_mexico.rds")
+extdatapath <- paste0(root, "/extdata/mammal_mexico.rds")
+extdatapath
+file.exists(extdatapath)
+extdatapath
+if(!file.exists(extdatapath)){
+utils::download.file(url, destfile = extdatapath)
+}
+extdatapath <- paste0(root, "/extdata/mammal_mexico.rds")
+url <- "https://mdd-aligned-shp-0-1-0.nyc3.cdn.digitaloceanspaces.com/mammal_mexico.rds"
+root <- base::system.file(package="ecoDistance1")
+url
+extdatapath
+dir.create("G:/My Drive/ecoDistance1/extdata/")
+paste0(root, "/extdata")
+extdatapath <- paste0(root, "/extdata")
+shp_path <- paste0(extdatapath, "mammal_mexico.rds")
+shp_path
+extdatapath <- paste0(root, "/extdata/")
+shp_path <- paste0(extdatapath, "mammal_mexico.rds")
+shp_path
+dir.exists(extdatapath)
+dir.create(extdatapath)
+if(!dir.exists(extdatapath)){
+dir.create(extdatapath)
+}
+shp_path
+file.exists(shp_path)
+!file.exists(shp_path)
+if(!file.exists(shp_path)){
+utils::download.file(url, destfile = shp_path)
+}
+dir.exists
+devtools::document()
+devtools::check()
+devtools::check(cran = TRUE)
+if(!dir.exists(extdatapath)){
+dir.create(extdatapath)
+}
+utils::download.file(url, destfile = shp_path)
+shp <- terra::unwrap(readRDS(path) )
+path
+readRDS(shp_path)
+devtools::document()
+devtools::check()
+url <- "https://mdd-aligned-shp-0-1-0.nyc3.cdn.digitaloceanspaces.com/mammal_mexico.rds"
+url
+readRDS(url)
+readr::read_rds(url)
+terra::unwrap(readr::read_rds(url))
+shp <- terra::unwrap(readr::read_rds(url))
+shp
+devtools::document()
+devtools::check()
+devtools::check()
+url_exists
+url_exists
+url_exists
+url
+url_exists
+usethis::use_package("httr")
+devtools::document()
+devtools::document()
+devtools::check()
+usethis::use_package("stringr")
+devtools::document()
+devtools::check()
+safely
+devtools::check()
+devtools::document()
+usethis::use_package("readr")
+devtools::document()
+url_exist
+devtools::document()
+ecoDistance1::url_exists()
+ecoDistance1::url_exists("www.google.com")
+ecoDistance1::get_mammal_shp()
+ecoDistance1::get_mammal_shp()
+devtools::document()
+devtools::document()
+devtools::document()
+devtools::document()
+devtools::document()
+devtools::document()
+install.packages("progress")
+library(devtools)
+document()
+document()
+check()
+check(cran = TRUE)
