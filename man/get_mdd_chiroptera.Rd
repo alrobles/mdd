@@ -2,11 +2,11 @@
 % Please edit documentation in R/get_mdd_chiroptera.R
 \name{get_mdd_chiroptera}
 \alias{get_mdd_chiroptera}
-\title{Function to return mammal shapefiles of afrosoricida Order}
+\title{Function to return mammal shapefiles of Chiroptera Order}
 \source{
-A phylogeny-informed characterization of global tetrapod traits
- addresses data gaps and biases
- \url{https://doi.org/10.1101/2023.03.04.531098}
+Expert range maps of global mammal distributions harmonised to
+ three taxonomic authorities
+ \url{https://doi.org/10.1111/jbi.14330}
 }
 \usage{
 get_mdd_chiroptera(dir = NULL)
@@ -18,7 +18,7 @@ get_mdd_chiroptera(dir = NULL)
 A SpatVector object with mammal shapefiles
 }
 \description{
-Function to return mammal shapefiles of afrosoricida Order
+Function to return mammal shapefiles of Chiroptera Order
 }
 \examples{
 get_mdd_chiroptera()

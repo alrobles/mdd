@@ -1,11 +1,11 @@
-#' Function to return mammal shapefiles of afrosoricida Order
+#' Function to return mammal shapefiles of Rodentia order
 #' @importFrom utils download.file
 #' @param dir A directory where to write the output
 #' @return A SpatVector object with mammal shapefiles
 #' @export
-#' @source A phylogeny-informed characterization of global tetrapod traits
-#'  addresses data gaps and biases
-#'  \url{https://doi.org/10.1101/2023.03.04.531098}
+#' @source Expert range maps of global mammal distributions harmonised to
+#'  three taxonomic authorities
+#'  \url{https://doi.org/10.1111/jbi.14330}
 #'
 #'
 #' @examples
@@ -29,8 +29,6 @@ get_mdd_rodentia <- function(dir = NULL){
   else{
     shp <- readr::read_rds(filePath)
   }
-
-
 
   if (!is.null(dir)) {
     readr::write_rds(shp, file = paste0(dir, "/MDD_Rodentia.rds"), compress = "xz")
