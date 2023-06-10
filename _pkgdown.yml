@@ -1,4 +1,4 @@
 url: https://alrobles.github.io/mdd/
 template:
   bootstrap: 5
-
+  bootswatch: lux
