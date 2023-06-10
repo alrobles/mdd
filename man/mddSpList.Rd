@@ -23,7 +23,9 @@ A data frame with 6362 rows and 8 columns:
 }
 }
 \source{
-\url{https://www.who.int/teams/global-tuberculosis-programme/data}
+Expert range maps of global mammal distributions harmonised to
+three taxonomic authorities
+\url{https://doi.org/10.1111/jbi.14330}
 }
 \usage{
 mddSpList

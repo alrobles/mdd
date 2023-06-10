@@ -17,5 +17,7 @@
 #'   \item{shp_orig}{Source of the shp}
 #'   ...
 #' }
-#' @source <https://www.who.int/teams/global-tuberculosis-programme/data>
+#' @source Expert range maps of global mammal distributions harmonised to
+#'  three taxonomic authorities
+#'  <https://doi.org/10.1111/jbi.14330>
 "mddSpList"

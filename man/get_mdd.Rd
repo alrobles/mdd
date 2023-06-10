@@ -9,12 +9,12 @@ three taxonomic authorities
 \url{https://doi.org/10.1111/jbi.14330}
 }
 \usage{
-get_mdd(Order = "all", dir = NULL)
+get_mdd(dir = NULL)
 }
 \arguments{
-\item{Order}{The mammal order want to  download}
-
 \item{dir}{A directory where to write the output}
+
+\item{Order}{The mammal order want to  download}
 }
 \value{
 A SpatVector object with mammal shapefiles
@@ -23,5 +23,5 @@ A SpatVector object with mammal shapefiles
 Function to return mammal shapefiles of Rodentia order
 }
 \examples{
-get_mdd("all")
+get_mdd()
 }
