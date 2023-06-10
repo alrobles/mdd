@@ -23,5 +23,6 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-URL: https://github.com/alrobles/mdd
+URL: https://github.com/alrobles/mdd,
+    https://alrobles.github.io/mdd/
 BugReports: https://github.com/alrobles/mdd/issues
