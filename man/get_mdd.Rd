@@ -5,14 +5,14 @@
 \title{Function to return mammal shapefiles of Rodentia order}
 \source{
 Expert range maps of global mammal distributions harmonised to
- three taxonomic authorities
- \url{https://doi.org/10.1111/jbi.14330}
+three taxonomic authorities
+\url{https://doi.org/10.1111/jbi.14330}
 }
 \usage{
-get_mdd(order = "all", dir = NULL)
+get_mdd(Order = "all", dir = NULL)
 }
 \arguments{
-\item{order}{The mammal order want to  download}
+\item{Order}{The mammal order want to  download}
 
 \item{dir}{A directory where to write the output}
 }
@@ -23,5 +23,5 @@ A SpatVector object with mammal shapefiles
 Function to return mammal shapefiles of Rodentia order
 }
 \examples{
-get_mdd("Afrosoricida")
+get_mdd("all")
 }

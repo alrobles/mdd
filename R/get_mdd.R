@@ -6,7 +6,7 @@
 #' @export
 #' @source Expert range maps of global mammal distributions harmonised to
 #'  three taxonomic authorities
-#'  \url{https://doi.org/10.1111/jbi.14330}
+#'  <https://doi.org/10.1111/jbi.14330>
 #' @examples
 #' get_mdd("all")
 get_mdd <- function(Order = "all", dir = NULL){

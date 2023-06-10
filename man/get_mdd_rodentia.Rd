@@ -5,8 +5,8 @@
 \title{Function to return mammal shapefiles of Rodentia order}
 \source{
 Expert range maps of global mammal distributions harmonised to
- three taxonomic authorities
- \url{https://doi.org/10.1111/jbi.14330}
+three taxonomic authorities
+\url{https://doi.org/10.1111/jbi.14330}
 }
 \usage{
 get_mdd_rodentia(dir = NULL)
