@@ -6,7 +6,9 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of mdd is to …
+The goal of mdd is to provide an interface to download and manipulate
+spatial range maps for mammals according with Mammal Diversity Database
+taxonomy. Currently the map version is related to MDD v1.2
 
 ## Installation
 
@@ -18,38 +20,80 @@ You can install the development version of mdd from
 devtools::install_github("alrobles/mdd")
 ```
 
-## Example
+## Summary
 
-This is a basic example which shows you how to solve a common problem:
+Expert geographic range maps aligned to the taxonomy of the Mammal
+Diversity Database (MDD) version 1.2, which was
+[published](https://zenodo.org/record/4139818) on 24 Sept 2020. That
+taxonomy includes 6,485 total species, of which 103 are considered
+recently extinct, 20 are considered domestic extant, and 6,362 are
+considered wild extant. For this mapping project, only 6,362 species
+from MDD v1.2 have maps. The original source of this R package can be
+found [here](https://zenodo.org/record/6644198)
+
+Original files need 10 gigabytes of storage in a compressed format. For
+the distribution of this R package, we decreased the resolution by
+simplifying the lines of the polygons by removing vertices with a
+tolerance of 1000 meters. We store the files as r binaries for more
+efficient manipulation using the terra R package.
+
+Finally we add the possibility of filtering these polygons by species
+and order. We also added a geographic filter that returns the maps by
+country or continent. It is possible to crop the maps with the country
+or leave the complete ranges that intersect with that country.
+
+In order to distribute this package, the maps are stored on a remote
+cloud server. Once the user performs a query, a local copy of the maps
+are stored on the user’s computer.
+
+The functions first look to see if the maps are already stored on the
+user’s computer, if not, it downloads them for future reference. Because
+this service is managed with our own resources, we make this feature
+notable to prevent the user from hitting our database every time a user
+makes a query and in this way also offer a faster experience when
+generating multiple queries. map sets.
+
+<figure>
+<img src="./man/figures/mdd_diagrama.png"
+alt="Figure 1. Package outline" />
+<figcaption aria-hidden="true">Figure 1. Package outline</figcaption>
+</figure>
+
+## Basic usage
+
+This is a basic example which shows how to look an specific map:
 
 ``` r
 library(mdd)
-## basic example code
+library(terra) # for plot
+#> Warning: package 'terra' was built under R version 4.2.3
+#> terra 1.7.23
+mammal <- get_mdd_map("Notoryctes caurinus")
+plot(mammal)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+<img src="man/figures/README-example1-1.png" width="100%" />
+
+You can search by order and country:
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+library(mdd)
+library(terra) # for plot
+rodents_mexico <- get_mdd_map(Order = "Rodentia", country = "Mexico", cropCountry = TRUE)
+plot(rodents_mexico)
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
+<img src="man/figures/README-example2-1.png" width="100%" />
 
-You can also embed plots, for example:
+Also you can search by order and continent. In this case the first time
+takes a while because :
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+``` r
+library(mdd)
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+library(terra) # for plot
+rodents_NA <- get_mdd_map(Order = "Chiroptera", continent = "North America", cropCountry = TRUE)
+plot(rodents_NA)
+```
+
+<img src="man/figures/README-example3-1.png" width="100%" />

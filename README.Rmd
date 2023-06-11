@@ -18,7 +18,10 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of mdd is to ...
+The goal of mdd is to provide an interface to
+download and manipulate spatial range maps for mammals according with Mammal Diversity Database taxonomy.
+Currently the map version is related to MDD v1.2
+
 
 ## Installation
 
@@ -28,28 +31,46 @@ You can install the development version of mdd from [GitHub](https://github.com/
 # install.packages("devtools")
 devtools::install_github("alrobles/mdd")
 ```
+## Summary
+Expert geographic range maps aligned to the taxonomy of the Mammal Diversity Database (MDD) version 1.2, which was [published](https://zenodo.org/record/4139818) on 24 Sept 2020.  That taxonomy includes 6,485 total species, of which 103 are considered recently extinct, 20 are considered domestic extant, and 6,362 are considered wild extant.  For this mapping project, only 6,362 species from MDD v1.2 have maps. The original source of this R package can be found [here](https://zenodo.org/record/6644198)
 
-## Example
+Original files need 10 gigabytes of storage in a compressed format. For the distribution of this R package, we decreased the resolution by simplifying the lines of the polygons by removing vertices with a tolerance of 1000 meters. We store the files as r binaries for more efficient manipulation using the terra R package.
 
-This is a basic example which shows you how to solve a common problem:
+Finally we add the possibility of filtering these polygons by species and order. We also added a geographic filter that returns the maps by country or continent. It is possible to crop the maps with the country or leave the complete ranges that intersect with that country.
 
-```{r example}
+In order to distribute this package, the maps are stored on a remote cloud server. Once the user performs a query, a local copy of the maps are stored on the user's computer. 
+
+The functions first look to see if the maps are already stored on the user's computer, if not, it downloads them for future reference. Because this service is managed with our own resources, we make this feature notable to prevent the user from hitting our database every time a user makes a query and in this way also offer a faster experience when generating multiple queries. map sets.
+
+![Figure 1. Package outline](./man/figures/mdd_diagrama.png)
+
+## Basic usage
+
+This is a basic example which shows how to look an 
+specific map:
+
+```{r example1}
 library(mdd)
-## basic example code
+library(terra) # for plot
+mammal <- get_mdd_map("Notoryctes caurinus")
+plot(mammal)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
+You can search by order and country:
+```{r example2}
+library(mdd)
+library(terra) # for plot
+rodents_mexico <- get_mdd_map(Order = "Rodentia", country = "Mexico", cropCountry = TRUE)
+plot(rodents_mexico)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
+Also you can search by order and continent. In this case 
+the first time takes a while because :
+```{r example3}
+library(mdd)
 
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
+library(terra) # for plot
+rodents_NA <- get_mdd_map(Order = "Chiroptera", continent = "North America", cropCountry = TRUE)
+plot(rodents_NA)
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
