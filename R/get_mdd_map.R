@@ -75,7 +75,7 @@ get_mdd_map <- function(species = NULL, Order = NULL, country = NULL, continent 
       shp <- shp_country
     } else
     {
-      shp <- subset(shp, sciname %in% shp_country$sciname,  NSE=TRUE)
+      shp <- subset(shp, shp$sciname %in% shp_country$sciname,  NSE=TRUE)
     }
 
   }
