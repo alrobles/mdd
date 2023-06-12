@@ -2,11 +2,11 @@
 % Please edit documentation in R/get_mdd_rodentia.R
 \name{get_mdd_rodentia}
 \alias{get_mdd_rodentia}
-\title{Function to return mammal shapefiles of Rodentia order}
+\title{Function to return mammal shapefiles of afrosoricida Order}
 \source{
-Expert range maps of global mammal distributions harmonised to
-three taxonomic authorities
-\url{https://doi.org/10.1111/jbi.14330}
+A phylogeny-informed characterization of global tetrapod traits
+addresses data gaps and biases
+\url{https://doi.org/10.1101/2023.03.04.531098}
 }
 \usage{
 get_mdd_rodentia(dir = NULL)
@@ -18,7 +18,7 @@ get_mdd_rodentia(dir = NULL)
 A SpatVector object with mammal shapefiles
 }
 \description{
-Function to return mammal shapefiles of Rodentia order
+Function to return mammal shapefiles of afrosoricida Order
 }
 \examples{
 get_mdd_rodentia()

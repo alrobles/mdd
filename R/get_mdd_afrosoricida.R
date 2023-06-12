@@ -15,7 +15,7 @@ get_mdd_afrosoricida <- function(dir = NULL){
   filePath <- paste0(root, "/", "data/Afrosoricida.rds")
 
   if(!file.exists(filePath)){
-    url <- "https://mdd-aligned-shp-0-1-0.nyc3.cdn.digitaloceanspaces.com/MDD_Afrosoricida.rds"
+    url <- "https://mdd-aligned-shp-0-1-0.nyc3.cdn.digitaloceanspaces.com/Afrosoricida.rds"
 
     # check if the url exists
     if (!url_exists(url)) {
