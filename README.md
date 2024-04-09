@@ -17,7 +17,7 @@ You can install the development version of mdd from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("alrobles/mdd")
+#devtools::install_github("alrobles/mdd")
 ```
 
 ## Summary
